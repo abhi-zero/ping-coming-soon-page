@@ -1,0 +1,268 @@
+@font-face {
+  font-display: swap;
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://fonts-3by.pages.dev/libre-franklin-v18-latin/libre-franklin-v18-latin-300.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://fonts-3by.pages.dev/libre-franklin-v18-latin/libre-franklin-v18-latin-600.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Libre Franklin";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts-3by.pages.dev/libre-franklin-v18-latin/libre-franklin-v18-latin-700.woff2")
+    format("woff2");
+}
+
+:root {
+  /* Color */
+  --button-icon-color: hsl(223, 87%, 63%);
+  --button-hover-color: hsl(223, 91%, 69%);
+  --border-color: hsl(223, 100%, 88%);
+  --error-color: hsl(354, 100%, 66%);
+  --text-gray-color: hsl(0, 0%, 59%);
+  --text-darkblue-color: hsl(209, 33%, 12%);
+
+  /* Font */
+  /* font family*/
+  --ff: "Libre Franklin", sans-serif;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  font-family: var(--ff);
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.wrapper {
+  max-width: 650px;
+  margin: 0 30px;
+  padding-block: 80px;
+  display: grid;
+  grid-template-rows: auto;
+  gap: 50px;
+  justify-items: center;
+  place-self: center;
+}
+
+.wrapper > img {
+  width: 70px;
+}
+
+.message-cta {
+  display: grid;
+  gap: 20px;
+}
+
+.message-cta .message {
+  display: grid;
+  gap: 10px;
+}
+
+.message-cta .message-1 {
+  font-size: 28px;
+  color: var(--text-darkblue-color);
+  word-spacing: 1px;
+  font-weight: 700;
+}
+.message-cta .message-1 .lighten-text {
+  color: var(--text-gray-color);
+  font-weight: 300;
+}
+
+.message-cta .message-2 {
+  color: var(--text-darkblue-color);
+  font-size: 16px;
+}
+
+.input-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.input-cta .error{
+  display: none;
+}
+
+.input-cta .error-message {
+  align-items: center;
+  font-size: 12px;
+  color: var(--error-color);
+  word-spacing: 1px;
+  font-style: italic;
+  transition: all 0.3s ease-in-out;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border-color: var(--button-icon-color);
+  border-style: solid;
+  
+}
+
+
+input:valid:not(:placeholder-shown) + .error{
+  display: none;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: var(--error-color);
+  outline-color: var(--error-color) ;
+}
+
+input:invalid:not(:placeholder-shown) + .error{
+  display:block;
+
+}
+
+input:invalid ~ .btn-submit {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  color: whitesmoke;
+  background-color: var(--button-icon-color);
+  border-radius: 25px;
+  border: none;
+  padding: 10px 0;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--button-hover-color);
+  color: white;
+
+  box-shadow: 0 10px 10px var(--border-color);
+}
+
+footer{
+  margin: 0 30px;
+}
+
+footer .social-icons{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+footer .social-icons a {
+  color: var(--button-icon-color);
+  font-size: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  padding: 5px 10px;
+  transition: all .3s ease-in-out;
+}
+
+footer .social-icons a:hover{
+  color: white;
+  background-color: var(--button-icon-color);
+}
+
+footer .copyright{
+  margin-block: 30px;
+  font-size: 12px;
+  color: var(--text-gray-color);
+}
+
+@media (min-width: 768px){
+  .wrapper{
+    padding-block: 60px;
+  }
+  .message-cta .message-1 {
+    font-size: 32px;
+    word-spacing: 3px;
+  }
+
+  .input-cta {
+    width: 600px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .input-cta .error{
+    grid-area: 2;
+    text-align: start;
+    padding-left: 20px;
+  }
+}
