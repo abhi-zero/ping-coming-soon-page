@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Ping coming soon page</title>
+
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <script defer src="./scripts/main.js"></script>
+
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+
+  <main class="wrapper">
+    <img src="./images/logo.svg" alt="Ping Logo">
+
+    <div class="message-cta">
+      
+      <div class="message">
+        <h1 class="message-1"><span class="lighten-text">We are launching</span> soon!</h1>
+        <p class="message-2">Subscribe and get notified</p>
+      </div>
+  
+      <div class="input-cta">
+        <input
+        type="email" 
+        name="Email" 
+        id="email"  
+        placeholder="Your Email Address" required>
+
+        <div class="error">
+          <p class="error-message" data-error data-default="Please provide a valid Email Address">Please provide a valid Email Address</p>
+        </div>
+        <button class="btn-submit" data-modal-open> Notify Me</button>
+      </div>
+
+    </div>
+
+    <div class="dashboard-image">
+      <img src="./images/illustration-dashboard.png" alt="Image of Application dashboard which comming soon">
+    </div>
+
+    <dialog data-modal>
+      <div class="thank-you-message">
+        <h2>Thank You!</h2>
+        <p>
+          Thank you for signing up! You'll be the first to know when our product launches. Stay tuned for updates in your inbox!
+        </p>
+      </div>
+    </dialog>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="ri-facebook-fill"></i></a>
+      <a href="#"><i class="ri-instagram-line"></i></a>
+      <a href="#"><i class="ri-twitter-x-line"></i></a>
+      <a href="#"><i class="ri-discord-line"></i></a>
+    </div>
+    <div class="copyright">
+      &copy; Copyright Ping. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
