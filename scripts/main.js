@@ -59,7 +59,7 @@ function validateEmail(value){
         // Set error styles and message if email is invalid
         emailInput.style.outlineColor = 'rgb(255, 82, 99)';
         emailInput.style.borderColor = 'rgb(255, 82, 99)';
-        errorMessage.textContent = "Please enter a valid email address (e.g., example@example.com).";
+        errorMessage.textContent = "Please enter a valid email address.";
         errorSection.style.display = "block";
         submitBtn.style.pointerEvents = 'none';
         submitBtn.style.opacity = '0.6';
