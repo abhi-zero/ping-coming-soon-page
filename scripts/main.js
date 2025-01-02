@@ -26,6 +26,7 @@ submitBtn.addEventListener('click', () => {
     }
     // Show the modal if the email is valid
     if(isvalid){
+        emailInput.value = "";
         modal.showModal();
     }
 });
