@@ -245,6 +245,14 @@ footer .copyright{
   color: var(--text-gray-color);
 }
 
+dialog{
+  border: none;
+  border-radius: 25px;
+}
+dialog h2{
+  color: var(--button-icon-color);
+}
+
 @media (min-width: 768px){
   .wrapper{
     padding-block: 60px;
