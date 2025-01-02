@@ -37,6 +37,28 @@
   /* Font */
   /* font family*/
   --ff: "Libre Franklin", sans-serif;
+
+  /* font size */
+  --fs1: 0.75rem; /* 12px*/
+  --fs2: 1rem; /* 16px*/
+  --fs3: 1.25rem; /* 20px*/
+  --fs4: 1.75rem; /* 28px*/
+  --fs5: 2rem; /* 32px*/ 
+
+  /* sapces */
+  --space1:0.625rem; /* 10px */
+  --space2:1.25rem; /* 20px */
+  --space3:1.875rem; /* 30px */
+  --space4:2.5rem; /* 40px */
+  --space5:3.125rem; /* 50px */
+  --space6:3.75rem; /* 60px */
+  --space7:4.375rem; /* 70px */
+  --space8:5rem; /* 80px */
+  --space9:5.625rem; /* 90px */
+  --space10:6.25rem; /* 100px */
+
+  /* border radius */
+  --br: 1.563rem;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -108,32 +130,32 @@ a{
 }
 
 .wrapper {
-  max-width: 650px;
-  margin: 0 30px;
-  padding-block: 80px;
+  max-width: 40.625rem;   /* 650px */
+  margin: 0 var(--space3);
+  padding-block: var(--space8);
   display: grid;
   grid-template-rows: auto;
-  gap: 50px;
+  gap: var(--space5);
   justify-items: center;
   place-self: center;
 }
 
 .wrapper > img {
-  width: 70px;
+  width: 4.375rem; /* 70px */
 }
 
 .message-cta {
   display: grid;
-  gap: 20px;
+  gap: var(--space2);
 }
 
 .message-cta .message {
   display: grid;
-  gap: 10px;
+  gap: var(--space1);
 }
 
 .message-cta .message-1 {
-  font-size: 28px;
+  font-size: var(--fs4);
   color: var(--text-darkblue-color);
   word-spacing: 1px;
   font-weight: 700;
@@ -145,13 +167,13 @@ a{
 
 .message-cta .message-2 {
   color: var(--text-darkblue-color);
-  font-size: 16px;
+  font-size: var(--fs2);
 }
 
 .input-cta {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space1);
   transition: all .3s ease-in-out;
 }
 
@@ -161,7 +183,7 @@ a{
 
 .input-cta .error-message {
   align-items: center;
-  font-size: 12px;
+  font-size: var(--fs1);
   color: var(--error-color);
   word-spacing: 1px;
   font-style: italic;
@@ -169,14 +191,13 @@ a{
 }
 
 input {
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 25px;
+  font-size: var(--fs2);
+  padding: var(--space1) var(--space2);
+  border-radius: var(--br);
   border-color: var(--button-icon-color);
   border-style: solid;
   
 }
-
 
 input:valid:not(:placeholder-shown) + .error{
   display: none;
@@ -201,9 +222,9 @@ input:invalid ~ .btn-submit {
 .btn-submit {
   color: whitesmoke;
   background-color: var(--button-icon-color);
-  border-radius: 25px;
+  border-radius: var(--br);
   border: none;
-  padding: 10px 0;
+  padding: var(--space1) 0;
   transition: all .3s ease-in-out;
   cursor: pointer;
 }
@@ -216,21 +237,23 @@ input:invalid ~ .btn-submit {
 }
 
 footer{
-  margin: 0 30px;
+  margin: 0 var(--space3);
 }
 
 footer .social-icons{
   display: flex;
-  gap: 20px;
+  gap: var(--space2);
   justify-content: center;
 }
 
 footer .social-icons a {
+  --space0:0.313rem; /* 5px */
+
   color: var(--button-icon-color);
-  font-size: 20px;
+  font-size: var(--fs3);
   border-radius: 50%;
   border: 1px solid var(--border-color);
-  padding: 5px 10px;
+  padding: var(--space0) var(--space1);
   transition: all .3s ease-in-out;
 }
 
@@ -240,30 +263,30 @@ footer .social-icons a:hover{
 }
 
 footer .copyright{
-  margin-block: 30px;
-  font-size: 12px;
+  margin-block: var(--space3);
+  font-size: var(--fs1);
   color: var(--text-gray-color);
 }
 
 dialog{
   border: none;
-  border-radius: 25px;
+  border-radius: var(--br);
 }
 dialog h2{
   color: var(--button-icon-color);
 }
 
-@media (min-width: 768px){
+@media (min-width: 48rem){
   .wrapper{
-    padding-block: 60px;
+    padding-block: var(--space6);
   }
   .message-cta .message-1 {
-    font-size: 32px;
+    font-size: var(--fs5);
     word-spacing: 3px;
   }
 
   .input-cta {
-    width: 600px;
+    width: 37.5rem; /* 600px */
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -271,6 +294,6 @@ dialog h2{
   .input-cta .error{
     grid-area: 2;
     text-align: start;
-    padding-left: 20px;
+    padding-left: var(--space2);
   }
 }
