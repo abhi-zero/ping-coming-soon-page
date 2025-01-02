@@ -41,17 +41,17 @@ function validateEmail(value){
 
     // Check if the trimmed value is empty
     if(trimedValue === ""){
-        errorMessage.textContent = "Email is required."
+        errorMessage.textContent = "Please enter your email address."
         return false;
     }
     // Check if the trimmed value contains spaces
     else if(trimedValue.includes(" ")){
-        errorMessage.textContent = "Email don't contain spaces."
+        errorMessage.textContent = "Email addresses cannot contain spaces."
         return false;
     }
     // Check if the value contains '@'
     else if(!value.includes("@")){
-        errorMessage.textContent = "Email must contain '@'";
+        errorMessage.textContent = "Email must contain '@'.";
         return false;
     }
     // Validate the email format using regex
@@ -59,7 +59,7 @@ function validateEmail(value){
         // Set error styles and message if email is invalid
         emailInput.style.outlineColor = 'rgb(255, 82, 99)';
         emailInput.style.borderColor = 'rgb(255, 82, 99)';
-        errorMessage.textContent = `Please enter a valid email (example@example.com)`;
+        errorMessage.textContent = "Please enter a valid email address (e.g., example@example.com).";
         errorSection.style.display = "block";
         submitBtn.style.pointerEvents = 'none';
         submitBtn.style.opacity = '0.6';
@@ -71,11 +71,12 @@ function validateEmail(value){
     errorSection.style.display = "none";
     emailInput.style.outlineColor = 'green';
     emailInput.style.borderColor = 'green';
-    submitBtn.style.pointerEvents = 'auto'; 
+    submitBtn.style.pointerEvents = 'auto';
     submitBtn.style.opacity = '1';
     submitBtn.disable = false;
     return true;
 }
+
 
 
 
