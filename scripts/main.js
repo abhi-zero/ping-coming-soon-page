@@ -28,6 +28,9 @@ submitBtn.addEventListener('click', () => {
     if(isvalid){
         emailInput.value = "";
         modal.showModal();
+        submitBtn.style.pointerEvents = 'none';
+        submitBtn.style.opacity = '0.6';
+        submitBtn.disable = true;
     }
 });
 
